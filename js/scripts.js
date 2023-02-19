@@ -7,6 +7,7 @@ jQuery(window).on("load", function () {
 jQuery(document).ready(function () {
 
     $(function () {
+        loadGA();
         for (var nk = window.location,
             o = $(".menu a, .settings-menu a").filter(function () {
                 return this.href == nk;
