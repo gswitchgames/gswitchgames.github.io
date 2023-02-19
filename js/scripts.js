@@ -90,3 +90,26 @@ Waves.init();
 Waves.attach('.wave-effect');
 Waves.attach('.btn');
 Waves.attach('button');
+
+
+function loadGA(){
+    
+    var  r = document.createElement("script");
+  r.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-G53ZKZ3BQY"), r.setAttribute("type", "text/javascript"), r.setAttribute("crossOrigin", "anonymous"),  r.onload = function (){
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-G53ZKZ3BQY');
+  
+    },document.head.appendChild(r);
+    
+}
+window.addEventListener('load', function() {
+    if(window.location.href.indexOf("localhost") == -1 && window.location.href.indexOf("127.0.0.1") == -1){
+        loadGA();
+        console.log(window.location.href.indexOf("localhost"));
+    }
+    
+})
+window.alert = {};  
