@@ -87,10 +87,10 @@ function themeToggle() {
 
 
 //ripple effect on button
-Waves.init();
-Waves.attach('.wave-effect');
-Waves.attach('.btn');
-Waves.attach('button');
+// Waves.init();
+// Waves.attach('.wave-effect');
+// Waves.attach('.btn');
+// Waves.attach('button');
 
 
 function loadGA(){
