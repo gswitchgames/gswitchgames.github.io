@@ -1,0 +1,1 @@
+{"redirect":0,"adstxt":0,"linksClickable":1,"inGameAd":1,"videoAdType":3,"videoLength":30,"adInterval":60,"thumb":1,"newADSDK":0.2}
