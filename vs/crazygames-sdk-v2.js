@@ -10000,7 +10000,7 @@ function _0x1dd0() {
                         return _0xe8d1f0(this, function(_0x3acfd1) {
                             var _0x5c5679 = _0x858b;
                             try {
-                                return [0x2, window[_0x5c5679(0x197)][_0x5c5679(0x113)]['endsWith']("trafficjam3d.github.io") || window[_0x5c5679(0x197)][_0x5c5679(0x113)]['endsWith']("kt.tbg95.site") || _0x5c5679(0x388) === (0x0,
+                                return [0x2, window[_0x5c5679(0x197)][_0x5c5679(0x113)]['endsWith']("trafficjam3d.github.io") || window[_0x5c5679(0x197)][_0x5c5679(0x113)]['endsWith']("kt.tbg95.co") || _0x5c5679(0x388) === (0x0,
                                 _0x3ae53b[_0x5c5679(0x46c)])(_0x5c5679(0x215))];
                             } catch (_0x434411) {
                                 return console[_0x5c5679(0x258)](_0x5c5679(0x1c9), _0x434411),
