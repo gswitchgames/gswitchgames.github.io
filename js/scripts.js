@@ -56,26 +56,69 @@ jQuery(document).ready(function () {
 });
 
 
-(function () {
-    let onpageLoad = localStorage.getItem("theme") || "";
-    let element = document.body;
-    element.classList.add(onpageLoad);
-    // document.getElementById("theme").textContent =
-    //     localStorage.getItem("theme") || "light";
-    
-})();
-
-function themeToggle() {
-    let element = document.body;
-    element.classList.toggle("dark-theme");
-
-    let theme = localStorage.getItem("theme");
-    if (theme && theme === "dark-theme") {
-        localStorage.setItem("theme", "");
+function applyTheme(theme) {
+    let html = document.documentElement;
+    let body = document.body;
+    if (theme === "light-theme") {
+        if (body) {
+            body.classList.remove("dark-theme");
+            body.classList.add("light-theme");
+        }
+        if (html) {
+            html.classList.remove("dark-theme");
+            html.classList.add("light-theme");
+        }
     } else {
-        localStorage.setItem("theme", "dark-theme");
+        if (body) {
+            body.classList.add("dark-theme");
+            body.classList.remove("light-theme");
+        }
+        if (html) {
+            html.classList.add("dark-theme");
+            html.classList.remove("light-theme");
+        }
     }
 }
+
+function themeToggle() {
+    let isDark = document.body ? document.body.classList.contains("dark-theme") : true;
+    let newTheme = isDark ? "light-theme" : "dark-theme";
+    applyTheme(newTheme);
+    try {
+        localStorage.setItem("theme", newTheme);
+    } catch (e) {
+        console.warn("localStorage not accessible", e);
+    }
+}
+
+(function () {
+    try {
+        let savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+    } catch (e) {}
+})();
+
+document.addEventListener("DOMContentLoaded", function () {
+    try {
+        let savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+    } catch (e) {}
+
+    // Ensure all theme-switch triggers are fully clickable and accessible
+    document.querySelectorAll(".dark-light-toggle, .theme-switch").forEach(function (el) {
+        el.style.cursor = "pointer";
+        el.setAttribute("role", "button");
+        el.setAttribute("aria-label", "Toggle dark/light theme");
+        el.onclick = function (e) {
+            e.preventDefault();
+            themeToggle();
+        };
+    });
+});
 
 
 
